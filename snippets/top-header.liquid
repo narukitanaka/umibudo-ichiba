@@ -1,0 +1,94 @@
+<div class="header-wrap">
+  <header id="header" class="top-header">
+    <div class="header-inner">
+      <nav class="header-navi01">
+        <ul>
+          <li><a href="/pages/about/">海ぶどう市場について</a></li>
+          <li><a href="/collections/all/">商品一覧</a></li>
+          <li><a href="/pages/faq/">よくあるご質問</a></li>
+          <li><a href="/pages/contact-form/">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="logo img-box"><a href="{{ routes.root_url }}"><img src="images/logo.png" alt=""></a></div>
+      <div class="sp_header-right">
+        <nav class="header-navi02">
+          <ul>
+            <li class="u-pc"><a href="#"><img src="images/icon-search.svg" alt="">探す</a></li>
+            <li><a href="#"><img src="images/icon-login.svg" alt="">ログイン</a></li>
+            <li><a href="#"><img src="images/icon-cart.svg" alt="">カート</a></li>
+          </ul>
+        </nav>
+        <div class="hamberger-wrap">
+          <div class="hambager-content">
+            <button type="button" class="hambager">
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+            </button>
+          </div><!-- /.hambager-content -->
+          <p class="ham-txt">MENU</p>
+        </div><!-- /.humberger-wrap -->
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="mega-menu">
+  <div class="humsearch-wrap">
+    <div class="mega-menu_inner">
+      <div class="search">
+        <form method="get" action="/search">
+          <div class="header_search-inner">
+            <input type="text" name="q" placeholder="キーワードを入力する">
+            <input type="hidden" name="type" value="product">
+            <button type="submit"><img src="images/icon-search.svg" alt=""></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div><!-- /.humsearch-wrap -->
+  <div class="humnav-wrap">
+    <div class="mega-menu_inner">
+      <nav class="nav01">
+        <ul>
+          <li><a href="{{ routes.root_url }}">TOP</a></li>
+          <li><a href="/pages/about/">みき屋について</a></li>
+          <li>
+            <a class="parent" href="#">商品一覧</a>
+            <div class="little-nav">
+              <div class="cate-box items">
+                <ul>
+                  <li>
+                    <a href="/collections/seagrape/">・ 海ぶどう</a>
+                  </li>
+                  <li>
+                    <a href="/collections/set/">・ セット</a>
+                  </li>
+                  <li>
+                    <a href="/collections/other/">・ その他</a>
+                  </li>
+                </ul>
+              </div><!-- /.cate-box -->
+            </div>
+          </li>
+          <li><a href="/pages/faq/">よくある質問</a></li>
+          <li><a href="/pages/company/">会社概要</a></li>
+          <li><a href="/pages/contact-form/">お問い合わせ</a></li>
+          <li><a href="/pages/policy/">プライバシーポリシー</a></li>
+          <li><a href="/pages/term/">特定商取引法に基づく表記</a></li>
+        </ul>
+      </nav>
+      <nav class="nav02">
+        <ul>
+          <li><a href="/account/"><img src="images/icon-login.svg" alt="">ログイン</a></li>
+          <li><a href="/cart/"><img src="images/icon-cart.svg" alt="">カート</a></li>
+        </ul>
+      </nav>
+      <p>
+        〒900-0013<br>
+        沖縄県那覇市牧志3-2-43(事務所・工場)<br>
+        TEL:098-863-1158 / FAX:098-894-3822
+      </p>
+    </div>
+  </div><!-- /.humnav-wrap -->
+</div><!-- /.mega-menu -->
