@@ -1,7 +1,7 @@
 <section class="p-itemdetail detail-bottom">
   <div class="inner">
 
-    {% assign recommend_item = product.metafields.custom._reccomend-foryou %}
+    {% assign recommend_item = product.metafields.custom._recommend %}
     {%-  if recommend_item != blank -%}
 
       <div class="item-recommend_wrap">
@@ -60,6 +60,10 @@
 
   </div><!-- /.inner -->
 </section><!-- /.p-itemlis -->
+
+{% render 'inc-common02' %}
+
+{% render 'inc-common01' %}
 
 
 
