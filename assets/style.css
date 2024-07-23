@@ -2441,6 +2441,10 @@ top
   background-color: #010642;
   color: #fff;
 }
+.p-itemlist .cate_wrap ul li a.active {
+  background-color: #010642;
+  color: #fff;
+}
 .p-itemlist .cate_wrap ul li a img {
   width: 9.1rem;
   aspect-ratio: 1/1;

@@ -4,7 +4,7 @@
     <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_mv.jpg" alt="">
   </picture>
   <div class="ttl">
-    <h2>商品一覧-全て</h2>
+    <h2>商品一覧-{{ collection.title }}</h2>
     <p class="sub-ttl">LINE UP</p>
   </div><!-- /.ttl -->
   <div class="ashirai">
@@ -21,19 +21,19 @@
     <div class="cate_wrap">
       <ul class="flex">
         <li class="fadeIn">
-          <a href="/collectons/seagrape/">
+          <a {% if request.path contains 'seagrape' %}class="active"{% endif %} href="/collections/seagrape/">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             海ぶどう
           </a>
         </li>
         <li class="fadeIn">
-          <a href="/collectons/set/">
+          <a {% if request.path contains 'set' %}class="active"{% endif %} href="/collections/set/">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             セット
           </a>
         </li>
         <li class="fadeIn">
-          <a href="/collectons/other/">
+          <a {% if request.path contains 'other' %}class="active"{% endif %} href="/collections/other/">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             その他
           </a>
@@ -57,8 +57,10 @@
             </div>
             <p class="cate">
               {% for collection in product.collections %}
-                {% assign excluded_collections = 'all,tax,recommend' | split: ',' %}              
-                {{ collection.title }}
+                {% assign excluded_collections = 'all,tax,recommend' | split: ',' %}
+                {% unless excluded_collections contains collection.handle %}
+                  {{ collection.title }}
+                {% endunless %}
               {% endfor %}
             </p>
             <p class="name">{{ product.title }}</p>
