@@ -288,6 +288,14 @@
         }
       {% endstyle %}
     {% endif %}
+    {% if template.name == 'product' %}
+      {% style %}
+        body {
+          background: rgb(94,212,238);
+          background: linear-gradient(159deg, rgba(94,212,238,1) 0%, rgba(119,229,236,1) 100%);
+        }
+      {% endstyle %}
+    {% endif %}
     {{ 'reset.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
 
