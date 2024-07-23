@@ -28,8 +28,8 @@
   </div><!-- /.mv-swiper -->
   <div class="mv-catchcopy img-box"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/mv-text01.svg" alt=""></div><!-- /.mv-catchcopy -->
   <div class="mv-pickup img-box anime-huwa">
-    <a href="item-detail.html">
-      <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/mv-pickup01.png" alt="">
+    <a href="{{ section.settings.link_pickup }}">
+      <img src="{{ section.settings.image_recommend_pc | img_url: 'master' }}" alt="">
     </a>
   </div><!-- /.mv-pickup -->
   <div class="ashirai img-box"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/top-mv_asirai.svg" alt=""></div>
@@ -41,7 +41,17 @@
 
   <div class="inner">
 
-    <div class="top-banner radius fadeIn"><a href="#"><img src="#" alt=""></a></div><!-- /.banner -->
+    {% if section.settings.image_banner_pc %}
+    <div class="top-banner radius fadeIn">
+      <a href="{{ section.settings.link_banner }}">
+        <picture>
+          <source srcset="{{ section.settings.image_banner_sp | img_url: 'master' }}" media="(max-width: 769px)">
+          <img src="{{ section.settings.image_banner_pc | img_url: 'master' }}" alt="">
+        </picture>
+      </a>
+    </div><!-- /.banner -->
+    {% endif %}
+
 
     <div class="block flex">
       <div class="left flex">
@@ -61,7 +71,7 @@
           県内外450店舗以上の飲食店へ向け<br>
           厳選した沖縄食材をお届けしております。
         </p>
-        <div class="btn-wrap"><a href="about.html" class="btn01">海ぶどう市場について</a></div><!-- /.btn-wrap -->
+        <div class="btn-wrap"><a href="/pages/about/" class="btn01">海ぶどう市場について</a></div><!-- /.btn-wrap -->
       </div><!-- /.right -->
     </div><!-- /.block -->
   </div><!-- /.inner-->
@@ -78,14 +88,22 @@
 
         <div class="flex swiper-wrapper">
 
+        {% for product in collections.recommend.products limit: 5 %}
           <div class="item-card swiper-slide">
-            <a class="h-scale" href="item-detail.html">
+            <a class="h-scale" href="{{ product.url }}">
               <div class="img-box obj-fit">
-                <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/item-dummy01.jpg" alt="">
+                <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
               </div>
-              <p class="cate">カテゴリ名</p>
-              <p class="name">商品名</p>
-              <p class="price">0,000円(税込)</p>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {% assign excluded_collections = 'all,tax,recommend' | split: ',' %}
+                  {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              <p class="name">{{ product.title }}</p>
+              <p class="price">{{ product.price | money }}円(税込)</p>
             </a>
             <div class="add-cart">
               <form action="/cart/add" method="post">
@@ -100,94 +118,7 @@
               </form>
             </div><!-- /.add-cart -->
           </div><!-- /.item-card -->
-          <div class="item-card swiper-slide">
-            <a class="h-scale" href="item-detail.html">
-              <div class="img-box obj-fit">
-                <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/item-dummy01.jpg" alt="">
-              </div>
-              <p class="cate">カテゴリ名</p>
-              <p class="name">商品名</p>
-              <p class="price">0,000円(税込)</p>
-            </a>
-            <div class="add-cart">
-              <form action="/cart/add" method="post">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit">
-                  カートに入れておく
-                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.002 18C18.5987 18 19.171 18.2371 19.5929 18.659C20.0149 19.081 20.252 19.6533 20.252 20.25C20.252 20.8467 20.0149 21.419 19.5929 21.841C19.171 22.2629 18.5987 22.5 18.002 22.5C17.4052 22.5 16.8329 22.2629 16.411 21.841C15.989 21.419 15.752 20.8467 15.752 20.25C15.752 19.0012 16.7532 18 18.002 18ZM0.00195312 0H3.6807L4.7382 2.25H21.377C21.6753 2.25 21.9615 2.36853 22.1724 2.57951C22.3834 2.79048 22.502 3.07663 22.502 3.375C22.502 3.56625 22.4457 3.7575 22.367 3.9375L18.3395 11.2163C17.957 11.9025 17.2145 12.375 16.3707 12.375H7.98945L6.97695 14.2088L6.9432 14.3438C6.9432 14.4183 6.97283 14.4899 7.02558 14.5426C7.07832 14.5954 7.14986 14.625 7.22445 14.625H20.252V16.875H6.75195C6.15522 16.875 5.58292 16.6379 5.16096 16.216C4.73901 15.794 4.50195 15.2217 4.50195 14.625C4.50195 14.2313 4.6032 13.86 4.77195 13.545L6.30195 10.7888L2.25195 2.25H0.00195312V0ZM6.75195 18C7.34869 18 7.92099 18.2371 8.34294 18.659C8.7649 19.081 9.00195 19.6533 9.00195 20.25C9.00195 20.8467 8.7649 21.419 8.34294 21.841C7.92099 22.2629 7.34869 22.5 6.75195 22.5C6.15522 22.5 5.58292 22.2629 5.16096 21.841C4.73901 21.419 4.50195 20.8467 4.50195 20.25C4.50195 19.0012 5.5032 18 6.75195 18ZM16.877 10.125L20.0045 4.5H5.78445L8.43945 10.125H16.877Z" fill="white"/>
-                  </svg>
-                </button>
-              </form>
-            </div><!-- /.add-cart -->
-          </div><!-- /.item-card -->
-          <div class="item-card swiper-slide">
-            <a class="h-scale" href="item-detail.html">
-              <div class="img-box obj-fit">
-                <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/item-dummy01.jpg" alt="">
-              </div>
-              <p class="cate">カテゴリ名</p>
-              <p class="name">商品名</p>
-              <p class="price">0,000円(税込)</p>
-            </a>
-            <div class="add-cart">
-              <form action="/cart/add" method="post">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit">
-                  カートに入れておく
-                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.002 18C18.5987 18 19.171 18.2371 19.5929 18.659C20.0149 19.081 20.252 19.6533 20.252 20.25C20.252 20.8467 20.0149 21.419 19.5929 21.841C19.171 22.2629 18.5987 22.5 18.002 22.5C17.4052 22.5 16.8329 22.2629 16.411 21.841C15.989 21.419 15.752 20.8467 15.752 20.25C15.752 19.0012 16.7532 18 18.002 18ZM0.00195312 0H3.6807L4.7382 2.25H21.377C21.6753 2.25 21.9615 2.36853 22.1724 2.57951C22.3834 2.79048 22.502 3.07663 22.502 3.375C22.502 3.56625 22.4457 3.7575 22.367 3.9375L18.3395 11.2163C17.957 11.9025 17.2145 12.375 16.3707 12.375H7.98945L6.97695 14.2088L6.9432 14.3438C6.9432 14.4183 6.97283 14.4899 7.02558 14.5426C7.07832 14.5954 7.14986 14.625 7.22445 14.625H20.252V16.875H6.75195C6.15522 16.875 5.58292 16.6379 5.16096 16.216C4.73901 15.794 4.50195 15.2217 4.50195 14.625C4.50195 14.2313 4.6032 13.86 4.77195 13.545L6.30195 10.7888L2.25195 2.25H0.00195312V0ZM6.75195 18C7.34869 18 7.92099 18.2371 8.34294 18.659C8.7649 19.081 9.00195 19.6533 9.00195 20.25C9.00195 20.8467 8.7649 21.419 8.34294 21.841C7.92099 22.2629 7.34869 22.5 6.75195 22.5C6.15522 22.5 5.58292 22.2629 5.16096 21.841C4.73901 21.419 4.50195 20.8467 4.50195 20.25C4.50195 19.0012 5.5032 18 6.75195 18ZM16.877 10.125L20.0045 4.5H5.78445L8.43945 10.125H16.877Z" fill="white"/>
-                  </svg>
-                </button>
-              </form>
-            </div><!-- /.add-cart -->
-          </div><!-- /.item-card -->
-          <div class="item-card swiper-slide">
-            <a class="h-scale" href="item-detail.html">
-              <div class="img-box obj-fit">
-                <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/item-dummy01.jpg" alt="">
-              </div>
-              <p class="cate">カテゴリ名</p>
-              <p class="name">商品名</p>
-              <p class="price">0,000円(税込)</p>
-            </a>
-            <div class="add-cart">
-              <form action="/cart/add" method="post">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit">
-                  カートに入れておく
-                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.002 18C18.5987 18 19.171 18.2371 19.5929 18.659C20.0149 19.081 20.252 19.6533 20.252 20.25C20.252 20.8467 20.0149 21.419 19.5929 21.841C19.171 22.2629 18.5987 22.5 18.002 22.5C17.4052 22.5 16.8329 22.2629 16.411 21.841C15.989 21.419 15.752 20.8467 15.752 20.25C15.752 19.0012 16.7532 18 18.002 18ZM0.00195312 0H3.6807L4.7382 2.25H21.377C21.6753 2.25 21.9615 2.36853 22.1724 2.57951C22.3834 2.79048 22.502 3.07663 22.502 3.375C22.502 3.56625 22.4457 3.7575 22.367 3.9375L18.3395 11.2163C17.957 11.9025 17.2145 12.375 16.3707 12.375H7.98945L6.97695 14.2088L6.9432 14.3438C6.9432 14.4183 6.97283 14.4899 7.02558 14.5426C7.07832 14.5954 7.14986 14.625 7.22445 14.625H20.252V16.875H6.75195C6.15522 16.875 5.58292 16.6379 5.16096 16.216C4.73901 15.794 4.50195 15.2217 4.50195 14.625C4.50195 14.2313 4.6032 13.86 4.77195 13.545L6.30195 10.7888L2.25195 2.25H0.00195312V0ZM6.75195 18C7.34869 18 7.92099 18.2371 8.34294 18.659C8.7649 19.081 9.00195 19.6533 9.00195 20.25C9.00195 20.8467 8.7649 21.419 8.34294 21.841C7.92099 22.2629 7.34869 22.5 6.75195 22.5C6.15522 22.5 5.58292 22.2629 5.16096 21.841C4.73901 21.419 4.50195 20.8467 4.50195 20.25C4.50195 19.0012 5.5032 18 6.75195 18ZM16.877 10.125L20.0045 4.5H5.78445L8.43945 10.125H16.877Z" fill="white"/>
-                  </svg>
-                </button>
-              </form>
-            </div><!-- /.add-cart -->
-          </div><!-- /.item-card -->
-          <div class="item-card swiper-slide">
-            <a class="h-scale" href="item-detail.html">
-              <div class="img-box obj-fit">
-                <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/item-dummy01.jpg" alt="">
-              </div>
-              <p class="cate">カテゴリ名</p>
-              <p class="name">商品名</p>
-              <p class="price">0,000円(税込)</p>
-            </a>
-            <div class="add-cart">
-              <form action="/cart/add" method="post">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit">
-                  カートに入れておく
-                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.002 18C18.5987 18 19.171 18.2371 19.5929 18.659C20.0149 19.081 20.252 19.6533 20.252 20.25C20.252 20.8467 20.0149 21.419 19.5929 21.841C19.171 22.2629 18.5987 22.5 18.002 22.5C17.4052 22.5 16.8329 22.2629 16.411 21.841C15.989 21.419 15.752 20.8467 15.752 20.25C15.752 19.0012 16.7532 18 18.002 18ZM0.00195312 0H3.6807L4.7382 2.25H21.377C21.6753 2.25 21.9615 2.36853 22.1724 2.57951C22.3834 2.79048 22.502 3.07663 22.502 3.375C22.502 3.56625 22.4457 3.7575 22.367 3.9375L18.3395 11.2163C17.957 11.9025 17.2145 12.375 16.3707 12.375H7.98945L6.97695 14.2088L6.9432 14.3438C6.9432 14.4183 6.97283 14.4899 7.02558 14.5426C7.07832 14.5954 7.14986 14.625 7.22445 14.625H20.252V16.875H6.75195C6.15522 16.875 5.58292 16.6379 5.16096 16.216C4.73901 15.794 4.50195 15.2217 4.50195 14.625C4.50195 14.2313 4.6032 13.86 4.77195 13.545L6.30195 10.7888L2.25195 2.25H0.00195312V0ZM6.75195 18C7.34869 18 7.92099 18.2371 8.34294 18.659C8.7649 19.081 9.00195 19.6533 9.00195 20.25C9.00195 20.8467 8.7649 21.419 8.34294 21.841C7.92099 22.2629 7.34869 22.5 6.75195 22.5C6.15522 22.5 5.58292 22.2629 5.16096 21.841C4.73901 21.419 4.50195 20.8467 4.50195 20.25C4.50195 19.0012 5.5032 18 6.75195 18ZM16.877 10.125L20.0045 4.5H5.78445L8.43945 10.125H16.877Z" fill="white"/>
-                  </svg>
-                </button>
-              </form>
-            </div><!-- /.add-cart -->
-          </div><!-- /.item-card -->
+        {% endfor %}
 
         </div><!-- /.swipper-wrapper -->
 
@@ -216,19 +147,19 @@
     </div><!-- /.head-ttl -->
     <div class="flex">
       <div class="box fadeIn">
-        <a href="/collections/all/" class="h-scale">
+        <a href="/collections/seagrape/" class="h-scale">
           <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt=""></div>
           <p>海ぶどう</p>
         </a>
       </div><!-- /.box -->
       <div class="box fadeIn">
-        <a href="/collections/all/" class="h-scale">
+        <a href="/collections/set/" class="h-scale">
           <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt=""></div>
           <p>セット</p>
         </a>
       </div><!-- /.box -->
       <div class="box fadeIn">
-        <a href="/collections/all/" class="h-scale">
+        <a href="/collections/other/" class="h-scale">
           <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt=""></div>
           <p>その他</p>
         </a>
@@ -248,13 +179,13 @@
     </div><!-- /.head-ttl -->
     <div class="flex">
       <div class="box fadeIn">
-        <a href="faq.html#order"><p>注文・支払いについて</p></a>
+        <a href="/pages/faq#order"><p>注文・支払いについて</p></a>
       </div>
       <div class="box fadeIn">
-        <a href="faq.html#shipping"><p>配送・送料について</p></a>
+        <a href="/pages/faq#shipping"><p>配送・送料について</p></a>
       </div>
       <div class="box fadeIn">
-        <a href="faq.html#return"><p>返品・交換について</p></a>
+        <a href="/pages/faq#return"><p>返品・交換について</p></a>
       </div>
     </div>
   </div>
@@ -295,6 +226,8 @@
     </div>
   </div>
 </section><!-- /.p-top_wrap05 -->
+
+{% render 'inc-common01' %}
 
 
 
