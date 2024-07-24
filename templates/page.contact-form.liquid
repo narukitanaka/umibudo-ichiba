@@ -1,0 +1,72 @@
+<div class="under-mv obj-fit">
+  <picture>
+    <source srcset="images/https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_mv.jpg" media="(max-width: 769px)">
+    <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_mv.jpg" alt="">
+  </picture>
+  <div class="ttl">
+    <h2>お問い合わせ</h2>
+    <p class="sub-ttl">CONTACT</p>
+  </div><!-- /.ttl -->
+  <div class="ashirai">
+    <picture>
+      <source srcset="images/https://cdn.shopify.com/s/files/1/0602/6978/9270/files/under-mv_ashirai_sp.svg" media="(max-width: 769px)">
+      <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/under-mv_ashirai.svg" alt="">
+    </picture>
+  </div>
+</div><!-- /.under-mv-->
+
+<section class="p-contact">
+  <div class="inner">
+
+    <p class="message">
+      お問い合わせは、下記お電話またはメールフォームにて承ります。<br>
+      また、お客さまからよく寄せられる質問とその回答を、<a href="/pages/faq/">「よくあるご質問」ページ</a>にまとめておりますので、ぜひご覧ください。
+    </p>
+
+    <div class="contact-tel">
+      <p>お電話から</p>
+      <a href="tel:0988631158"><img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/icon-tel.svg" alt="">098-863-1158</a>
+      <p class="business-hours">営業時間｜09:30~18:30（電話受付時間）</p>
+    </div>
+
+    <h3>メールフォームから</h3>
+    <div class="form_wrap">
+      <form action="#">
+        <table>
+          <tr>
+            <th><label for="form_name">お名前</label></th>
+            <td>
+              <input type="text" id="form_name" name="contact[お名前]" placeholder="例）山田　太郎" required>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="form_mail">メールアドレス</label></th>
+            <td>
+              <input type="email" id="form_mail" name="contact[メールアドレス]" placeholder="例）info@sample.com" required>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="form_tel">電話番号</label></th>
+            <td>
+              <input type="tel" id="form_tel" name="contact[電話番号]" placeholder="例）098-111-2222" required>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="form_textarea">お問い合わせ内容</label></th>
+            <td>
+              <textarea name="contact[お問い合わせ内容]" id="form_textarea" cols="30" rows="15" maxlength="500"></textarea>
+            </td>
+          </tr>
+        </table>
+        <p><a href="/pages/policy/" target="_blank">プライバシーポリシー</a>をご確認の上、「送信する」ボタンをクリックしてください。</p>
+        <div class="btn-wrap"><button class="btn01">送信する</button></div>
+      </form>
+    </div>
+
+  </div><!-- /.inner -->
+</section><!-- /.p-itemlis -->
+
+
+{% render 'inc-common02' %}
+
+{% render 'inc-common01' %}
