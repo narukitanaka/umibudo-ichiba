@@ -195,6 +195,7 @@ input[type=button]:focus {
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 100vmax;
+  color: #010642;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
@@ -3509,6 +3510,9 @@ top
 /*************************************************
   検索結果
 *************************************************/
+.template-search {
+  text-align: center;
+}
 .template-search h1, .template-search h2, .template-search h3, .template-search p, .template-search a, .template-search div {
   color: #fff;
 }
@@ -3516,17 +3520,6 @@ top
 /*************************************************
   カート
 *************************************************/
-.template-cart h1, .template-cart h2, .template-cart h3, .template-cart p, .template-cart a, .template-cart span, .template-cart div, .template-cart th {
-  color: #fff !important;
-}
-.template-cart th {
-  font-size: 13px;
-}
-
-.cart__footer-wrapper .tax-note {
-  color: #fff;
-}
-
 .cart-items th {
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5) !important;
 }
@@ -3553,6 +3546,28 @@ top
 }
 .customer h1, .customer h2, .customer h3, .customer p, .customer a, .customer div, .login h1, .login h2, .login h3, .login p, .login a, .login div, .register h1, .register h2, .register h3, .register p, .register a, .register div {
   color: #fff !important;
+}
+
+.addresses h2 {
+  font-size: 1.8rem !important;
+}
+.addresses button {
+  display: block;
+  margin: 2rem auto 1rem !important;
+}
+
+.account h2 {
+  font-size: 1.8rem;
+}
+.account table {
+  box-shadow: none !important;
+  background-color: #fff;
+}
+.account table th {
+  color: #000;
+}
+.account table td a {
+  background-color: #010642;
 }
 
 /**

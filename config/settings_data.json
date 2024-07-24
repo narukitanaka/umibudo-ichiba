@@ -10,9 +10,9 @@
 {
   "current": {
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "zen_kaku_gothic_new_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "zen_kaku_gothic_new_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -155,9 +155,9 @@
       "scheme-1": {
         "settings": {
           "background": "#ffffff",
-          "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
+          "background_gradient": "linear-gradient(159deg, rgba(94, 212, 238, 1), rgba(119, 229, 236, 1) 100%)",
+          "text": "#000000",
+          "button": "#010642",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
