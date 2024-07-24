@@ -31,36 +31,7 @@
 
     <h3>メールフォームから</h3>
     <div class="form_wrap">
-      <form action="#">
-        <table>
-          <tr>
-            <th><label for="form_name">お名前</label></th>
-            <td>
-              <input type="text" id="form_name" name="contact[お名前]" placeholder="例）山田　太郎" required>
-            </td>
-          </tr>
-          <tr>
-            <th><label for="form_mail">メールアドレス</label></th>
-            <td>
-              <input type="email" id="form_mail" name="contact[メールアドレス]" placeholder="例）info@sample.com" required>
-            </td>
-          </tr>
-          <tr>
-            <th><label for="form_tel">電話番号</label></th>
-            <td>
-              <input type="tel" id="form_tel" name="contact[電話番号]" placeholder="例）098-111-2222" required>
-            </td>
-          </tr>
-          <tr>
-            <th><label for="form_textarea">お問い合わせ内容</label></th>
-            <td>
-              <textarea name="contact[お問い合わせ内容]" id="form_textarea" cols="30" rows="15" maxlength="500"></textarea>
-            </td>
-          </tr>
-        </table>
-        <p><a href="/pages/policy/" target="_blank">プライバシーポリシー</a>をご確認の上、「送信する」ボタンをクリックしてください。</p>
-        <div class="btn-wrap"><button class="btn01">送信する</button></div>
-      </form>
+      {% section 'contact-form' %}
     </div>
 
   </div><!-- /.inner -->
