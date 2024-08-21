@@ -64,7 +64,7 @@
               {% endfor %}
             </p>
             <p class="name">{{ product.title }}</p>
-            <p class="price">{{ product.price | money }}円(税込)</p>
+            <p class="price">{{ product.price | money }}(税込)</p>
           </a>
           <div class="add-cart">
             <form action="/cart/add" method="post">

@@ -103,7 +103,7 @@
                 {% endfor %}
               </p>
               <p class="name">{{ product.title }}</p>
-              <p class="price">{{ product.price | money }}円(税込)</p>
+              <p class="price">{{ product.price | money }}(税込)</p>
             </a>
             <div class="add-cart">
               <button type="button" class="add-to-cart-btn cart-btn" data-variant-id="{{ product.variants.first.id }}">
