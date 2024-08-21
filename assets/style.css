@@ -937,6 +937,7 @@ footer {
   margin-top: -2.9861111111vw;
   padding-top: 2.9861111111vw;
   background-color: #77CAEC;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   footer {
@@ -3568,6 +3569,22 @@ top
 }
 .account table td a {
   background-color: #010642;
+}
+@media screen and (max-width: 768px) {
+  .account table td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .account table td:first-of-type {
+    padding-top: 1rem !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .account table td:last-of-type {
+    padding-bottom: 1rem !important;
+  }
 }
 
 /**
