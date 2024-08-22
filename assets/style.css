@@ -3584,6 +3584,28 @@ top
   letter-spacing: 1px;
 }
 
+.ngc-note-attr-field {
+  max-width: 36rem !important;
+}
+.ngc-note-attr-field label {
+  margin-bottom: 0.7rem;
+  color: #010642 !important;
+  font-weight: 500 !important;
+}
+.ngc-note-attr-field input, .ngc-note-attr-field select {
+  background-color: #fff;
+  color: #1C0702 !important;
+  font-weight: 500;
+}
+.ngc-note-attr-field input::-moz-placeholder {
+  color: #1C0702;
+  font-weight: 500;
+}
+.ngc-note-attr-field input::placeholder {
+  color: #1C0702;
+  font-weight: 500;
+}
+
 /*************************************************
   マイページ
 *************************************************/

@@ -4,9 +4,9 @@
 <div class="cart-custom-field field-derively-date">
   <p>
     配達ご指定日<br>
-    <span>※必ずお受け取りできる日付をご指定ください</span>
+    {% comment %} <span>※必ずお受け取りできる日付をご指定ください</span> {% endcomment %}
   </p>
-  <input id="date" type="text" name="attributes[お届け希望日]" value="{{ cart.attributes.date }}" placeholder="選択する" required/>
+  <input id="date" type="text" name="attributes[お届け希望日]" value="{{ cart.attributes.date }}" placeholder="選択する" />
 </div>
 
 <script>
