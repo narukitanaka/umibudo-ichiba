@@ -1,3 +1,11 @@
+<style>
+  @media screen and (max-width: 768px) {
+    #itemList {
+      padding-top: 7rem;
+    }
+  }
+</style>
+
 <div class="under-mv obj-fit">
   <picture>
     <source srcset="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_mv.jpg" media="(max-width: 769px)">
@@ -21,19 +29,19 @@
     <div class="cate_wrap">
       <ul class="flex">
         <li class="fadeIn">
-          <a {% if request.path contains 'seagrape' %}class="active"{% endif %} href="/collections/seagrape/">
+          <a {% if request.path contains 'seagrape' %}class="active"{% endif %} href="/collections/seagrape#itemList">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             海ぶどう
           </a>
         </li>
         {% comment %} <li class="fadeIn">
-          <a {% if request.path contains 'set' %}class="active"{% endif %} href="/collections/set/">
+          <a {% if request.path contains 'set' %}class="active"{% endif %} href="/collections/set#itemList">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             セット
           </a>
         </li>
         <li class="fadeIn">
-          <a {% if request.path contains 'other' %}class="active"{% endif %} href="/collections/other/">
+          <a {% if request.path contains 'other' %}class="active"{% endif %} href="/collections/other#itemList">
             <img src="https://cdn.shopify.com/s/files/1/0602/6978/9270/files/to-category_img01.png" alt="">
             その他
           </a>
@@ -42,7 +50,7 @@
     </div><!-- /.cate_wrap -->
 
 
-    <div class="itemlist_wrap flex">
+    <div id="itemList" class="itemlist_wrap flex">
 
       {% assign has_products = false %}
 
