@@ -192,9 +192,9 @@
 
 
         {% comment %} 商品説明 {% endcomment %}
-        <p class="txt">
-          {{ product.content | strip_html | newline_to_br }}
-        </p>
+        <div class="txt">
+          {{ product.content }}
+        </div>
 
         {% comment %} 商品情報（メタフィールド） {% endcomment %}
         <div class="item-infomation">

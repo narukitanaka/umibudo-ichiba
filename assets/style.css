@@ -1780,7 +1780,8 @@ top
     top: 28.5333333333vw;
   }
 }
-.under-mv .ttl h2, .under-mv .ttl .sub-ttl {
+.under-mv .ttl h2,
+.under-mv .ttl .sub-ttl {
   color: #fff;
   text-align: center;
 }
@@ -1831,7 +1832,8 @@ top
     padding: 19.2vw 0 41.3333333333vw;
   }
 }
-.p-about_wrap01 h2, .p-about_wrap01 p {
+.p-about_wrap01 h2,
+.p-about_wrap01 p {
   color: #fff;
 }
 .p-about_wrap01 .sub-ttl {
@@ -1872,7 +1874,8 @@ top
     gap: 4rem;
   }
 }
-.p-about_wrap01 .left, .p-about_wrap01 .right {
+.p-about_wrap01 .left,
+.p-about_wrap01 .right {
   flex-basis: 50%;
 }
 .p-about_wrap01 .left p {
@@ -1971,7 +1974,8 @@ top
 .p-abot_wrap02 .inner {
   position: relative;
 }
-.p-abot_wrap02 .inner .tri01, .p-abot_wrap02 .inner .tri02 {
+.p-abot_wrap02 .inner .tri01,
+.p-abot_wrap02 .inner .tri02 {
   position: absolute;
 }
 .p-abot_wrap02 .inner .tri01 {
@@ -2007,11 +2011,13 @@ top
     margin-bottom: 4rem;
   }
 }
-.p-abot_wrap02 .head-ttl h2, .p-abot_wrap02 .head-ttl p {
+.p-abot_wrap02 .head-ttl h2,
+.p-abot_wrap02 .head-ttl p {
   text-align: left;
 }
 @media screen and (max-width: 768px) {
-  .p-abot_wrap02 .head-ttl h2, .p-abot_wrap02 .head-ttl p {
+  .p-abot_wrap02 .head-ttl h2,
+  .p-abot_wrap02 .head-ttl p {
     text-align: center;
   }
 }
@@ -2055,7 +2061,7 @@ top
   max-width: 52rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-color: #1CD8D8;
+  background-color: #1cd8d8;
   padding: 11.7rem 9.5rem 5rem 11.5rem;
   z-index: 1;
 }
@@ -2173,7 +2179,8 @@ top
 .p-abot_wrap03 .block:last-of-type {
   margin-bottom: 0;
 }
-.p-abot_wrap03 .block .left, .p-abot_wrap03 .block .right {
+.p-abot_wrap03 .block .left,
+.p-abot_wrap03 .block .right {
   flex-basis: 50%;
 }
 .p-abot_wrap03 .block .left {
@@ -2227,7 +2234,7 @@ top
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #1CD8D8;
+  color: #1cd8d8;
   background-color: #fff;
 }
 .p-abot_wrap03 .block .right p {
@@ -2324,7 +2331,7 @@ top
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #1CD8D8;
+  color: #1cd8d8;
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -2358,7 +2365,7 @@ top
 }
 @media screen and (max-width: 768px) {
   .p-abot_wrap03 .p-about_swiper .swiper-scrollbar .swiper-scrollbar-drag {
-    background-color: #3F3B3A;
+    background-color: #3f3b3a;
     border-radius: 0;
   }
 }
@@ -2721,6 +2728,9 @@ top
     font-size: 1.4rem;
   }
 }
+.p-itemdetail .detail-content .txt span {
+  color: #fff;
+}
 .p-itemdetail .detail-content .item-infomation {
   background-color: #fff;
   padding: 2rem 3rem;
@@ -2738,7 +2748,8 @@ top
     border-bottom: none;
   }
 }
-.p-itemdetail .detail-content .item-infomation table th, .p-itemdetail .detail-content .item-infomation table td {
+.p-itemdetail .detail-content .item-infomation table th,
+.p-itemdetail .detail-content .item-infomation table td {
   padding: 1rem 0;
 }
 .p-itemdetail .detail-content .item-infomation table th {
@@ -2846,7 +2857,7 @@ top
 }
 @media screen and (max-width: 768px) {
   .p-itemdetail.detail-bottom .swiper-scrollbar .swiper-scrollbar-drag {
-    background-color: #3F3B3A;
+    background-color: #3f3b3a;
     border-radius: 0;
   }
 }
@@ -2854,32 +2865,42 @@ top
 /*************************************************
   会社概要・特商法
 *************************************************/
-.p-company, .p-term {
+.p-company,
+.p-term {
   position: relative;
   margin-top: -8.1944444444vw;
   padding: 13.5416666667vw 0 20rem;
   background: url(https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_bg.png) no-repeat top/cover;
 }
 @media screen and (max-width: 768px) {
-  .p-company, .p-term {
+  .p-company,
+  .p-term {
     background: url(https://cdn.shopify.com/s/files/1/0602/6978/9270/files/p-under_bg_sp.png) no-repeat top/cover;
     padding: 26.6666666667vw 0 10rem;
   }
 }
-.p-company table, .p-term table {
+.p-company table,
+.p-term table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 1rem 0;
 }
-.p-company table tr:last-of-type th, .p-company table tr:last-of-type td, .p-term table tr:last-of-type th, .p-term table tr:last-of-type td {
+.p-company table tr:last-of-type th,
+.p-company table tr:last-of-type td,
+.p-term table tr:last-of-type th,
+.p-term table tr:last-of-type td {
   border-bottom: none;
 }
-.p-company table tr th, .p-company table tr td, .p-term table tr th, .p-term table tr td {
+.p-company table tr th,
+.p-company table tr td,
+.p-term table tr th,
+.p-term table tr td {
   font-size: 1.5rem;
   letter-spacing: 2px;
   line-height: 2;
 }
-.p-company table tr th, .p-term table tr th {
+.p-company table tr th,
+.p-term table tr th {
   width: 15%;
   font-weight: 500;
   color: #fff;
@@ -2887,20 +2908,23 @@ top
   border-bottom: 2px dotted #010642;
 }
 @media screen and (max-width: 768px) {
-  .p-company table tr th, .p-term table tr th {
+  .p-company table tr th,
+  .p-term table tr th {
     display: block;
     width: 100%;
     padding-bottom: 0;
     border-bottom: none;
   }
 }
-.p-company table tr td, .p-term table tr td {
+.p-company table tr td,
+.p-term table tr td {
   color: #fff;
   padding: 1rem 0;
   border-bottom: 2px dotted #fff;
 }
 @media screen and (max-width: 768px) {
-  .p-company table tr td, .p-term table tr td {
+  .p-company table tr td,
+  .p-term table tr td {
     display: block;
     width: 100%;
     padding-top: 0.5rem;
@@ -2929,7 +2953,10 @@ top
     padding: 16vw 0 5rem;
   }
 }
-.p-policy h3, .p-policy p, .p-policy li, .p-policy a {
+.p-policy h3,
+.p-policy p,
+.p-policy li,
+.p-policy a {
   color: #fff;
   line-height: 2;
 }
@@ -3330,7 +3357,8 @@ top
     padding-bottom: 20px;
   }
 }
-.p-contact .form_wrap form table tr td input, .p-contact .form_wrap form table tr td textarea {
+.p-contact .form_wrap form table tr td input,
+.p-contact .form_wrap form table tr td textarea {
   width: 100%;
   background-color: #f5f5f5;
   padding: 15px 25px;
@@ -3340,7 +3368,8 @@ top
   letter-spacing: 1px;
 }
 @media screen and (max-width: 768px) {
-  .p-contact .form_wrap form table tr td input, .p-contact .form_wrap form table tr td textarea {
+  .p-contact .form_wrap form table tr td input,
+  .p-contact .form_wrap form table tr td textarea {
     padding: 1.5rem;
   }
 }
@@ -3395,11 +3424,14 @@ top
 #judgeme_product_reviews .jdgm-rev-widg__summary-text,
 #judgeme_product_reviews .jdgm-rev__author,
 #judgeme_product_reviews .jdgm-star,
-#judgeme_product_reviews label, #judgeme_product_reviews input, #judgeme_product_reviews textarea {
+#judgeme_product_reviews label,
+#judgeme_product_reviews input,
+#judgeme_product_reviews textarea {
   font-size: 1.4rem;
   font-weight: 500;
 }
-#judgeme_product_reviews .jdgm-rev__content div, #judgeme_product_reviews .jdgm-rev__content p {
+#judgeme_product_reviews .jdgm-rev__content div,
+#judgeme_product_reviews .jdgm-rev__content p {
   font-size: 1.4rem;
 }
 #judgeme_product_reviews .jdgm-form__fieldset-actions {
@@ -3420,20 +3452,25 @@ top
 #judgeme_product_reviews .jdgm-histogram__frequency,
 #judgeme_product_reviews .jdgm-rev__title,
 #judgeme_product_reviews .jdgm-rev__timestamp,
-#judgeme_product_reviews .jdgm-rev__content div, #judgeme_product_reviews p {
+#judgeme_product_reviews .jdgm-rev__content div,
+#judgeme_product_reviews p {
   color: #fff !important;
 }
 #judgeme_product_reviews .jdgm-rev__icon {
   background-color: #fff;
 }
-#judgeme_product_reviews .jdgm-row-actions, #judgeme_product_reviews .jdgm-rev, #judgeme_product_reviews .jdgm-paginate {
+#judgeme_product_reviews .jdgm-row-actions,
+#judgeme_product_reviews .jdgm-rev,
+#judgeme_product_reviews .jdgm-paginate {
   border-top: 1px solid #eee;
 }
-#judgeme_product_reviews .jdgm-histogram, #judgeme_product_reviews .jdgm-widget-actions-wrapper {
+#judgeme_product_reviews .jdgm-histogram,
+#judgeme_product_reviews .jdgm-widget-actions-wrapper {
   border-left: 1px solid #fff;
 }
 @media screen and (max-width: 768px) {
-  #judgeme_product_reviews .jdgm-histogram, #judgeme_product_reviews .jdgm-widget-actions-wrapper {
+  #judgeme_product_reviews .jdgm-histogram,
+  #judgeme_product_reviews .jdgm-widget-actions-wrapper {
     border-left: none;
   }
 }
@@ -3498,7 +3535,7 @@ top
   display: block;
   font-size: 16px !important;
   text-align: center;
-  color: #DD0000;
+  color: #dd0000;
   margin-bottom: 4rem;
   position: sticky;
 }
@@ -3514,7 +3551,12 @@ top
 .template-search {
   text-align: center;
 }
-.template-search h1, .template-search h2, .template-search h3, .template-search p, .template-search a, .template-search div {
+.template-search h1,
+.template-search h2,
+.template-search h3,
+.template-search p,
+.template-search a,
+.template-search div {
   color: #fff;
 }
 
@@ -3552,25 +3594,26 @@ top
   margin-bottom: 5px;
 }
 .cart-custom-field p span {
-  color: #FF3100;
+  color: #ff3100;
 }
-.cart-custom-field input, .cart-custom-field select {
+.cart-custom-field input,
+.cart-custom-field select {
   width: 100%;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
-  color: #1C0702;
+  color: #1c0702;
   background-color: #fff;
   border-radius: 6px;
   border: 1px solid #aaa;
   padding: 0.8rem 1.5rem;
 }
 .cart-custom-field input::-moz-placeholder {
-  color: #1C0702;
+  color: #1c0702;
   font-weight: 500;
 }
 .cart-custom-field input::placeholder {
-  color: #1C0702;
+  color: #1c0702;
   font-weight: 500;
 }
 
@@ -3592,27 +3635,47 @@ top
   color: #010642 !important;
   font-weight: 500 !important;
 }
-.ngc-note-attr-field input, .ngc-note-attr-field select {
+.ngc-note-attr-field input,
+.ngc-note-attr-field select {
   background-color: #fff;
-  color: #1C0702 !important;
+  color: #1c0702 !important;
   font-weight: 500;
 }
 .ngc-note-attr-field input::-moz-placeholder {
-  color: #1C0702;
+  color: #1c0702;
   font-weight: 500;
 }
 .ngc-note-attr-field input::placeholder {
-  color: #1C0702;
+  color: #1c0702;
   font-weight: 500;
 }
 
 /*************************************************
   マイページ
 *************************************************/
-.customer, .login, .register {
+.customer,
+.login,
+.register {
   position: relative;
 }
-.customer h1, .customer h2, .customer h3, .customer p, .customer a, .customer div, .login h1, .login h2, .login h3, .login p, .login a, .login div, .register h1, .register h2, .register h3, .register p, .register a, .register div {
+.customer h1,
+.customer h2,
+.customer h3,
+.customer p,
+.customer a,
+.customer div,
+.login h1,
+.login h2,
+.login h3,
+.login p,
+.login a,
+.login div,
+.register h1,
+.register h2,
+.register h3,
+.register p,
+.register a,
+.register div {
   color: #fff !important;
 }
 
